@@ -19,7 +19,11 @@ const App: React.FC = () => {
   // fetch and set data in here
   const addAdvice = async () => {
     setFetching(true) // with this part we are able to show loader
-    const response = await axios.get(url)
+    const response = await axios.get(url, {
+      params: {
+        t: new Date().getTime(),
+      },
+    })
     setFetching(false) // turn off loader after get response // even if request failed
     if (response.status !== 200) return
     const data = response.data

@@ -50,34 +50,34 @@ Users should be able to:
 
 In this project I learned how to use TypeScript in components with some actions on buttons:
 
-```interface
-  interface IButton {
-    cooldown: number
-    handleClick: React.MouseEventHandler<HTMLButtonElement>
-  }
+```typescript
+interface IButton {
+  cooldown: number
+  handleClick: React.MouseEventHandler<HTMLButtonElement>
+}
 ```
 
 Also how to create timer with countdown:
 
-```
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (cooldown <= 0) return
-      setCooldown((cooldown) => cooldown - 1)
-    }, 1000)
-    return () => {
-      clearInterval(timer)
-    }
-  }, [cooldown])
+```js
+useEffect(() => {
+  const timer = setInterval(() => {
+    if (cooldown <= 0) return
+    setCooldown((cooldown) => cooldown - 1)
+  }, 1000)
+  return () => {
+    clearInterval(timer)
+  }
+}, [cooldown])
 ```
 
 And here is my first type file:
 
-```
-  export interface IAdvice {
-    id: number
-    advice: string
-  }
+```typescript
+export interface IAdvice {
+  id: number
+  advice: string
+}
 ```
 
 After all there was one complicated thing about svg files.
